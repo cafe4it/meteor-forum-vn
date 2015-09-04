@@ -1,0 +1,68 @@
+body {
+    min-height: 2000px;
+    padding-top: 70px;
+}
+
+.list_controls{
+    margin-bottom: 20px;
+}
+
+.list_controls .nav{
+    margin-left: 0px;
+}
+
+.list_controls .nav-pills li a{
+    padding: 7px 15px !important;
+}
+
+.list_controls .nav-pills li.active a{
+    color: #fff;
+    background-color: #e45735;
+}
+
+.list_controls .nav-pills li a:hover{
+    color: #e45735;
+    background-color: #f7cdc2;
+}
+
+.list-topic thead{
+    background-color: #fafafa;
+}
+
+.list-topic th{
+    color: #919191;
+    font-weight: normal;
+    font-size: 1em;
+}
+
+.list-topic td{
+    padding: 12px 5px !important;
+}
+
+.list-topic td:first-of-type {
+    padding-left: 10px;
+    width: 60%;
+}
+
+.list-topic td a{
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.list-topic td.replies, td.views {
+    font-weight: bolder;
+    color: black;
+}
+
+.category-breadcrumb{
+   float : left;
+    margin-right: 10px;
+}
+
+span.badge-category-bg{
+    width: 10px;
+    height: 10px;
+    margin-right: 5px;
+    display: inline-block;
+    line-height: 1;
+}

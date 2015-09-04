@@ -1,0 +1,8 @@
+{
+  "default" : [
+    {"name" : "Thông báo", "slug" : "thong-bao"},
+    {"name" : "Tin mới", "slug" : "tin-moi"},
+    {"name" : "Tutorial", "slug" : "tutorial"},
+    {"name" : "Hỏi đáp", "slug" : "hoi-dap"}
+  ]
+}

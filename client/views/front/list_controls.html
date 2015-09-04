@@ -1,0 +1,21 @@
+<template name="list_controls">
+    <div class="list_controls">
+        <div class="btn-group category-breadcrumb">
+            <button type="button" class="btn btn-default">Danh mục</button>
+            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <span class="caret"></span>
+                <span class="sr-only">Toggle Dropdown</span>
+            </button>
+            <ul class="dropdown-menu">
+                {{#each categories}}
+                    <li><a href="{{getPath}}"><span class="badge-category-bg" style="background-color: {{color}}"></span>{{name}}</a></li>
+                {{/each}}
+            </ul>
+        </div>
+        <ul class="nav nav-pills">
+            <li role="presentation" class="active"><a href="#">Mới nhất</a></li>
+            <li role="presentation"><a href="#">Top</a></li>
+            <li role="presentation"><a href="{{pathFor 'categories'}}">Danh mục</a></li>
+        </ul>
+    </div>
+</template>
