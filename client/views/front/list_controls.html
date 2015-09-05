@@ -1,21 +1,23 @@
 <template name="list_controls">
     <div class="list_controls">
-        <div class="btn-group category-breadcrumb">
-            <button type="button" class="btn btn-default">Danh mục</button>
-            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <span class="caret"></span>
-                <span class="sr-only">Toggle Dropdown</span>
-            </button>
-            <ul class="dropdown-menu">
-                {{#each categories}}
-                    <li><a href="{{getPath}}"><span class="badge-category-bg" style="background-color: {{color}}"></span>{{name}}</a></li>
-                {{/each}}
-            </ul>
-        </div>
+        <ul class="nav nav-pills category-breadcrumb">
+            <li role="presentation" class="dropdown">
+                <a id="drop4" href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                    Tất cả danh mục
+                    <span class="caret"></span>
+                </a>
+                <ul id="menu1" class="dropdown-menu" aria-labelledby="drop4">
+                    {{#each categories}}
+                        <li><a href="{{getPath}}" data-toggle="tooltip" data-placement="right" title="{{description}}"><span class="badge-category-bg" style="background-color: {{color}}"></span>{{name}}</a></li>
+                    {{/each}}
+                </ul>
+            </li>
+        </ul>
         <ul class="nav nav-pills">
             <li role="presentation" class="active"><a href="#">Mới nhất</a></li>
             <li role="presentation"><a href="#">Top</a></li>
             <li role="presentation"><a href="{{pathFor 'categories'}}">Danh mục</a></li>
         </ul>
+        <button id="create_topic" class="btn btn-default"><i class="fa fa-plus"></i> Tạo chủ đề</button>
     </div>
 </template>

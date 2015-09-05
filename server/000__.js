@@ -34,5 +34,18 @@ if (Meteor.isServer) {
                 });
             })
         }
+
+        Accounts.onCreateUser(function(options, user){
+            var roles = ['user'];
+            if(Meteor.users.find().count() === 0){
+                //Tài khoản đầu tiên, mặc định là administrator.
+                roles = ['administrator']
+            }
+
+            user = _.extend(user, {roles : roles});
+            Roles.addUsersToRoles(user._id, roles);
+
+            return user;
+        })
     })
 }

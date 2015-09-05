@@ -1,0 +1,13 @@
+<template name="backHeader">
+    <div class="row admin-nav">
+        <div class="col-md-12">
+            <div class="container">
+                <ul class="nav nav-pills">
+                    <li role="presentation" class="{{isActiveRoute 'admin_home'}}"><a href="{{pathFor 'admin_home'}}">Quản trị</a></li>
+                    <li role="presentation" class="{{isActiveRoute 'admin_categories'}}"><a href="{{pathFor 'admin_categories'}}">Danh mục</a></li>
+                    <li role="presentation" class="{{isActiveRoute 'admin_topics'}}"><a href="{{pathFor 'admin_topics'}}">Chủ đề</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</template>

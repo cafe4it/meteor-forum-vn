@@ -1,0 +1,54 @@
+<template name="admin_categories">
+    <div class="row">
+        <div class="col-md-12">
+            <p>
+                {{#afModal class="btn btn-sm btn-default" collection="Categories" operation="insert" title="Tạo danh mục mới" buttonContent="Lưu lại"}}
+                    <i class="fa fa-plus"></i> Tạo danh mục
+                {{/afModal}}
+            </p>
+            <div class="table-responsive">
+                <table class="table admin-list-category">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>Tên danh mục</th>
+                            <th>Đường dẫn</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {{#each categories}}
+                            {{> admin_tr_category}}
+                        {{/each}}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</template>
+
+<template name="admin_tr_category">
+    <tr>
+        <td class="category-color"><span class="badge-category-bg" style="background-color: {{color}}"></span></td>
+        <td class="category-name">{{name}}</td>
+        <td class="category-slug">{{getPath}}</td>
+        <td class="td-controls">
+            {{#afModal class="btn btn-sm btn-warning" collection="Categories" operation="update" doc=_id title="Sửa danh mục" buttonContent="Lưu lại"}}
+                <i class="fa fa-pencil"></i> Sửa
+            {{/afModal}}
+        </td>
+    </tr>
+</template>
+
+<template name="admin_category_edit">
+    {{#autoForm collection="Categories" doc=this id="updateCategoryForm" type="update"}}
+        <fieldset>
+            <legend>Sửa danh mục</legend>
+            {{> afQuickField name='name'}}
+            {{> afQuickField name='slug'}}
+            {{> afQuickField name='description' rows=6}}
+            {{> afQuickField name="color"}}
+            {{> afQuickField name='no'}}
+        </fieldset>
+    {{/autoForm}}
+</template>

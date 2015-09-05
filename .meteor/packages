@@ -20,3 +20,11 @@ underscore
 underscorestring:underscore.string
 dburles:collection-helpers
 momentjs:moment
+alanning:roles
+mizzao:bootboxjs
+aldeed:collection2
+aldeed:simple-schema
+aldeed:autoform
+yogiben:autoform-modals
+michalvalasek:autoform-bootstrap-colorpicker
+ongoworks:security

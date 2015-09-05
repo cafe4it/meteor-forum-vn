@@ -1,14 +1,27 @@
-body {
-    min-height: 2000px;
-    padding-top: 70px;
+.frontend {
+    margin-top: 70px;
+}
+
+.admin-nav{
+    margin-top: 10px;
+    margin-bottom: 20px;
 }
 
 .list_controls{
-    margin-bottom: 20px;
+    clear: both;
+}
+
+.list_controls .btn{
+    float : right;
+}
+
+.list_controls li > .tooltip .tooltip-inner {
+    width : 200px !important;
 }
 
 .list_controls .nav{
     margin-left: 0px;
+    float : left;
 }
 
 .list_controls .nav-pills li a{
@@ -23,6 +36,16 @@ body {
 .list_controls .nav-pills li a:hover{
     color: #e45735;
     background-color: #f7cdc2;
+}
+
+.list_controls .category-breadcrumb {
+    background-color: #e6e6e6;
+    color: #000;
+}
+
+.list-topic{
+    clear: both;
+    margin-top: 20px;
 }
 
 .list-topic thead{
@@ -49,6 +72,10 @@ body {
     cursor: pointer;
 }
 
+.list-topic td.title a{
+    color: #222;
+}
+
 .list-topic td.replies, td.views {
     font-weight: bolder;
     color: black;
@@ -65,4 +92,12 @@ span.badge-category-bg{
     margin-right: 5px;
     display: inline-block;
     line-height: 1;
+}
+
+.admin-list-category .category-color{
+    width : 2%;
+}
+
+.admin-list-category .td-controls{
+    width : 30%;
 }
