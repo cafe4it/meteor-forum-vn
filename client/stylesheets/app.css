@@ -101,3 +101,7 @@ span.badge-category-bg{
 .admin-list-category .td-controls{
     width : 30%;
 }
+
+.navbar-brand{
+    padding-top: 5px !important;
+}

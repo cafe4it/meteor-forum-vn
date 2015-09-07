@@ -5,3 +5,13 @@
     </div>
     {{> autoformModals}}
 </template>
+
+<template name="blankLayout">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                {{> Template.dynamic template=main}}
+            </div>
+        </div>
+    </div>
+</template>

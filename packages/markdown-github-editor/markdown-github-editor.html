@@ -1,11 +1,30 @@
 <template name="MarkdownEditor">
     <div class="mkd-controls">
         <div class="textarea-wrapper">
-            <div class="mkd-button-bar"></div>
-            <textarea name="" id="" cols="30" rows="10"></textarea>
+            <div id="{{inId}}" class="in">
+                <div class="mkd-button-bar">
+                    <div class="mkd-button-row" data-id="{{inId}}">
+                        <button class="btn btn-sm mkd-btn" data-id="mkd-btn-header"><i class="fa fa-font"></i></button>
+                        <button class="btn btn-sm mkd-btn" data-id="mkd-btn-bold"><i class="fa fa-bold"></i></button>
+                        <button class="btn btn-sm mkd-btn" data-id="mkd-btn-italic"><i class="fa fa-italic"></i></button>
+                        <button class="btn btn-sm mkd-btn" data-id="mkd-btn-strikethrough"><i class="fa fa-strikethrough"></i></button>
+                        <div class="mkd-spacer"></div>
+                        <button class="btn btn-sm mkd-btn" data-id="mkd-btn-link"><i class="fa fa-link"></i></button>
+                        <button class="btn btn-sm mkd-btn" data-id="mkd-btn-quote"><i class="fa fa-quote-left"></i></button>
+                        <button class="btn btn-sm mkd-btn" data-id="mkd-btn-code"><i class="fa fa-code"></i></button>
+                        <button class="btn btn-sm mkd-btn" data-id="mkd-btn-image"><i class="fa fa-file-image-o"></i></button>
+                        <div class="mkd-spacer"></div>
+                        <button class="btn btn-sm mkd-btn" data-id="mkd-btn-list-ol"><i class="fa fa-list-ol"></i></button>
+                        <button class="btn btn-sm mkd-btn" data-id="mkd-btn-list"><i class="fa fa-list"></i></button>
+                        <button class="btn btn-sm mkd-btn" data-id="mkd-btn-hr"><i class="fa fa-minus"></i></button>
+                        <button class="btn btn-sm active mkd-btn mkd-btn-right" data-id="mkd-btn-preview"><i class="fa fa-columns"></i></button>
+                    </div>
+                </div>
+                <textarea name="" id="{{codeId}}" cols="30" rows="10"></textarea>
+            </div>
         </div>
         <div class="preview-wrapper">
-            <div class="mkd-preview"></div>
+            <div id="{{outId}}" class="out "></div>
         </div>
     </div>
 </template>
