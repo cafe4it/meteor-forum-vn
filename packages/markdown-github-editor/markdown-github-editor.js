@@ -1,6 +1,8 @@
 Template.MarkdownEditor.onCreated(function () {
-    if (this.data.reactiveVar) {
+    if (this.data && this.data.reactiveVar) {
         Session.set(this.data.reactiveVar, {});
+    }else{
+        Session.set("reactiveVar", {});
     }
     var id = Random.id(5);
     this.inId = 'in-' + id;
@@ -141,8 +143,10 @@ function isCurrentEditor(e, v) {
 }
 
 Template.MarkdownEditor.destroyed = function () {
-    if (this.data.reactiveVar) {
+    if (this.data && this.data.reactiveVar) {
         Session.set(this.data.reactiveVar, null);
+    }else{
+        Session.set("reactiveVar", null);
     }
 
     if (editor) editor = null;
@@ -205,9 +209,31 @@ var doQuote = function () {
 }
 
 var doHr = function (chunk, start, end) {
-    var pos = editor.posFromIndex(end);
-    if (!editor.somethingSelected()) {
-        pos = _.extend(pos, {line: pos.line + 2, ch: 0});
-        editor.setCursor(pos);
+    var pos = editor.posFromIndex(end),
+        char = '----------',
+        contentOfLine = editor.getLine(pos.line);
+    var posFrom, posTo;
+    if (!editor.somethingSelected() && _.isEmpty(contentOfLine)) {
+        posFrom = {
+            line: pos.line +1,
+            ch: 0
+        };
+    }else{
+        posFrom = {
+            line: pos.line +2,
+            ch: 0
+        };
     }
+
+    posTo = {
+        line: posFrom.line,
+        ch: char.length
+    };
+    editor.focus();
+    if(posFrom.line - pos.line > 1){
+        editor.execCommand('newlineAndIndent');
+        editor.execCommand('newlineAndIndent');
+    }
+    editor.replaceRange(char, posFrom, posTo);
+    editor.execCommand('newlineAndIndent');
 }

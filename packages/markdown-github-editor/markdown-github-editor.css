@@ -2,12 +2,12 @@
     line-height: 16px;
 }
 .in{
-    position: fixed;
+    position: absolute;
     top: 0;
     left: 0;
     bottom: 0;
     width: 50%;
-    height: auto;
+    height: inherit;
     overflow: auto;
     font-size: 12px;
     box-shadow: -10px 2px 6px 10px rgba(0,0,0,0.4);
@@ -67,7 +67,7 @@
     box-sizing: border-box;
 }
 .out{
-    position: fixed;
+    position: absolute;
     top: 0;
     right: 0;
     left: 50%;

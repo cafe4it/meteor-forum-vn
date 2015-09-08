@@ -20,6 +20,6 @@ Template.list_topic.helpers({
     updated : function(){
         var ms = moment().diff(moment(this.updatedAt)),
             s = moment.duration(ms).minutes();
-        return (s < 59) ? s + ' phút' : s.humanize();
+        return (s < 59) ? s + ' phút' : '';
     }
 })
